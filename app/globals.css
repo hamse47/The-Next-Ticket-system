@@ -4,7 +4,7 @@
 
 /* base styles */
 body {
-  background: #ebf0fa;
+  background-color: #ebf0fa;
   @apply text-gray-500 m-8;
 }
 h1,
@@ -108,14 +108,14 @@ form button {
     mb-0;
 }
 .card p {
-  @apply my-4 text-sm leading-6;
+  @apply my-4 text-sm leading-8;
 }
 
 /* pill styles */
 .pill {
   @apply py-1 px-2 mt-3
     inline-block 
-    text-sm font-semibold;
+    text-base font-bold capitalize;
 }
 .pill.high {
   @apply bg-red-300 text-red-600;
@@ -127,6 +127,6 @@ form button {
   @apply bg-emerald-300 text-emerald-600;
 }
 .card .pill {
-  @apply absolute bottom-0 right-0
+  @apply absolute bottom-0 right-0 
     rounded-tl-md;
 }
