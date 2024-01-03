@@ -7,11 +7,11 @@ export default function NotFound() {
   return (
     <main className="text-center">
       <h2 className="text-3xl">Sorry page not found</h2>
-      <p>We cound not find the page you were looking for</p>
+      <p className="text-xl"> Could not find the page you were looking for</p>
       <p>
         Go back to{" "}
         <Link href="/" className="text-xl font-bold">
-          DashBoard
+          Dashboard
         </Link>
         .
       </p>

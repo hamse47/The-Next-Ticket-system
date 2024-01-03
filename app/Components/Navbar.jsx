@@ -6,13 +6,15 @@ import Logo from "./Next-Logo.png";
 export default function Navbar() {
   return (
     <nav>
-      <Image
-        src={Logo}
-        alt="Next Helpdesk Logo"
-        width={80}
-        quality={100}
-        placeholder="blur"
-      />
+      <a href="/">
+        <Image
+          src={Logo}
+          alt="Next Helpdesk Logo"
+          width={80}
+          quality={100}
+          placeholder="blur"
+        />
+      </a>
       The Next Ticket HelpDesk
       <Link href="/">Dashboard</Link>
       <Link href="/tickets">Tickets</Link>
