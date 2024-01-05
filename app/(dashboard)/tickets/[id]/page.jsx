@@ -2,19 +2,21 @@ import { notFound } from "next/navigation";
 
 export const dynamicParams = true; // default value = true
 
+// Generates metadata for the ticket details page
 export async function generateMetadata({ params }) {
-  const id = params.id;
+  const id = params.id; // Extracting ID from params
 
   const res = await fetch(`http://localhost:4000/tickets/${id}`);
-  const tickets = await res.json();
+  const ticket = await res.json();
+
   return {
-    title: `New | ${tickets.title}`,
+    title: `New | ${ticket.title}`, // Generating title based on ticket data
   };
 }
 
+// Generates static params using fetched ticket data
 export async function generateStaticParams() {
   const res = await fetch("http://localhost:4000/tickets");
-
   const tickets = await res.json();
 
   return tickets.map((ticket) => ({
@@ -22,6 +24,7 @@ export async function generateStaticParams() {
   }));
 }
 
+// Fetches ticket details based on ID
 async function getTicket(id) {
   const res = await fetch(`http://localhost:4000/tickets/${id}`, {
     next: {
@@ -36,8 +39,9 @@ async function getTicket(id) {
   return res.json();
 }
 
+// Component to display ticket details
 export default async function TicketDetails({ params }) {
-  const ticket = await getTicket(params.id.title);
+  const ticket = await getTicket(params.id.title); // Fetches ticket based on ID
 
   return (
     <main>
