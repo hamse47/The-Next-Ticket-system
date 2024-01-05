@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main>
-      <h2>Dashboard</h2>
+      <h2 className="text-2xl">Dashboard</h2>
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero
         repellendus tempore, exercitationem odit, quasi doloremque possimus
@@ -15,11 +15,11 @@ export default function Home() {
 
       <div className="flex justify-center my-8">
         <Link href="/tickets">
-          <button className="btn-primary">View Tickets</button>
+          <button className="btn-primary text-xl">View Tickets</button>
         </Link>
       </div>
 
-      <h2>Company Updates</h2>
+      <h2 className="text-xl">Company Updates</h2>
 
       <div className="card">
         <h3>New member of the web dev team...</h3>

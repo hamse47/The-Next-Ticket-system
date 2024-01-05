@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import NoteFound from "../public/favicon.jpg";
+import NoteFound from "../../public/favicon.jpg";
 
 export default function NotFound() {
   return (

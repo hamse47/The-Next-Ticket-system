@@ -3,6 +3,10 @@ import React, { Suspense } from "react";
 import Loading from "../loading";
 import TicketList from "./TicketList";
 
+export const metadata = {
+  title: "New Helpdesk | Tickets ",
+};
+
 export default function Tickets() {
   return (
     <main>

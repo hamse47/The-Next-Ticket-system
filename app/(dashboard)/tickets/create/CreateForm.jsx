@@ -21,7 +21,7 @@ export default function CreateForm() {
       title,
       body,
       priority,
-      user_email: "Hamza2developer.dev",
+      user_email: "Hamza2developer@gmail.com",
     };
 
     // Making a POST request to add a new ticket
