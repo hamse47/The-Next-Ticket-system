@@ -14,12 +14,13 @@ export default function Signup() {
 
   const handleSubmit = async (e, email, password) => {
     e.preventDefault();
+    setError("");
 
     // Creating a supabase client instance
     const supabase = createClientComponentClient();
 
     // Signing up the user using supabase authentication
-    const { error: signUpError } = await supabase.auth.signUp({
+    const { error } = await supabase.auth.signUp({
       email,
       password,
       option: {
@@ -28,24 +29,14 @@ export default function Signup() {
     });
 
     // Handling duplicate email error
-    if (
-      signUpError &&
-      signUpError.message.includes(
-        "duplicate key value violates unique constraint"
-      )
-    ) {
-      setError("Email already exists. Please log in instead.");
-      return;
-    }
 
-    // Handling other errors
-    if (signUpError) {
-      setError(signUpError.message);
-      return;
+    if (error) {
+      setError(error.message);
     }
-
-    // Handle successful signup
-    router.push("/verify"); // Navigating to the verification page
+    if (!error) {
+      // Handle successful signup
+      router.push("/verify"); // Navigating to the verification page
+    }
   };
 
   return (
