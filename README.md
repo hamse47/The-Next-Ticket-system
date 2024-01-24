@@ -18,6 +18,8 @@ An efficient ticket system built with Next.js.
 
 The Next Ticket System is a web application developed with Next.js for managing tickets efficiently. It provides a user-friendly interface for creating, viewing, and managing support tickets.
 
+[![Introduction Video](thumbnail.jpg)](public/videos/Main-tutorial-ezgif.com-video-to-gif-converter.mp4)
+
 ## Features
 
 - User authentication and authorization
