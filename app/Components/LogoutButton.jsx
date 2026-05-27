@@ -16,15 +16,8 @@ export default function LogoutButton() {
     // Attempting to sign out
     const { error } = await supabase.auth.signOut();
 
-    // If logout is successful, navigate to the login page
-    if (!error) {
-      router.push("/login");
-    }
-
-    // If logout is unsuccessful, log the error message
-    if (error) {
-      console.log(error);
-    }
+    // Navigate to login page after logout
+    router.push("/login");
   };
 
   // Rendering the logout button with a click event
