@@ -9,7 +9,7 @@ export default function Navbar({ user }) {
 
   return (
     <nav>
-      <a href="/">
+      <Link href="/">
         <Image
           src={Logo}
           alt="Next Helpdesk Logo"
@@ -17,7 +17,7 @@ export default function Navbar({ user }) {
           quality={100}
           placeholder="blur"
         />
-      </a>
+      </Link>
       The Next Ticket HelpDesk
       <Link href="/">Dashboard</Link>
       <Link href="/tickets" className="mr-auto">
