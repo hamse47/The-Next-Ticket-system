@@ -10,11 +10,13 @@ export default function CreateForm() {
   const [body, setBody] = useState("");
   const [priority, setPriority] = useState("low");
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   // Handling form submission
   const handleSubmit = async (e) => {
     e.preventDefault(); // Preventing default form submission behavior
     setIsLoading(true); // Setting loading state to true
+    setError(null); // Clearing any previous error
 
     // Creating a new ticket object with form data
     const newTicket = {
@@ -24,17 +26,26 @@ export default function CreateForm() {
       user_email: "Hamza2developer@gmail.com",
     };
 
-    // Making a POST request to add a new ticket
-    const res = await fetch("http://localhost:4000/tickets", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newTicket),
-    });
+    try {
+      // Making a POST request to add a new ticket
+      const res = await fetch("http://localhost:4000/tickets", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newTicket),
+      });
 
-    // Handling response status
-    if (res.status === 201) {
-      router.refresh(); // Refreshing router state
-      router.push("/tickets"); // Navigating to the tickets page
+      // Handling response status
+      if (res.status === 201) {
+        router.refresh(); // Refreshing router state
+        router.push("/tickets"); // Navigating to the tickets page
+        return;
+      }
+
+      setError("Could not create the ticket. Please try again.");
+    } catch {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setIsLoading(false); // Resetting loading state so the form stays usable
     }
   };
 
@@ -74,6 +85,8 @@ export default function CreateForm() {
         {isLoading && <span>Adding...</span>}
         {!isLoading && <span>Add Ticket</span>}
       </button>
+      {/* Error feedback when the request fails */}
+      {error && <p className="error">{error}</p>}
     </form>
   );
 }
