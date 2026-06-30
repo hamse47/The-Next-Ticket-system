@@ -18,7 +18,7 @@ export default function NotFound() {
       <div className="m-14 items-center">
         <Image
           src={NoteFound}
-          alt="favicon.jpeg"
+          alt="Page not found illustration"
           width={700}
           height={300}
           className="ml-14"
