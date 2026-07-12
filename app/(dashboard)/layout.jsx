@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 // Import the Navbar component
-import Navbar from "@/app/components/Navbar";
+import Navbar from "@/app/Components/Navbar";
 
 // DashboardLayout component that wraps the application layout
 export default async function DashboardLayout({ children }) {
