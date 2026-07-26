@@ -7,6 +7,14 @@ export async function generateMetadata({ params }) {
   const id = params.id; // Extracting ID from params
 
   const res = await fetch(`http://localhost:4000/tickets/${id}`);
+
+  // The ticket may not exist - fall back rather than rendering "undefined"
+  if (!res.ok) {
+    return {
+      title: "New | Ticket not found",
+    };
+  }
+
   const ticket = await res.json();
 
   return {
