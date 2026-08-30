@@ -16,7 +16,9 @@ export default function Tickets() {
           <p>Currently open tickets</p>
         </div>
         <Link href="/tickets/create">
-          <h1 className="text-xl">Create New Ticket</h1>
+          <span className="text-xl font-bold text-primary">
+            Create New Ticket
+          </span>
         </Link>
       </nav>
       <Suspense fallback={<Loading />}>
