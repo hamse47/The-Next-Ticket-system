@@ -7,6 +7,10 @@ async function getTickets() {
     },
   });
 
+  if (!res.ok) {
+    throw new Error(`Failed to load tickets (${res.status})`);
+  }
+
   return res.json();
 }
 
