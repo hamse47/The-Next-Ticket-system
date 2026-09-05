@@ -43,7 +43,7 @@ export default function Signup() {
     <main>
       <h2 className="text-center">Sign up</h2>
       {/* AuthForm component for user input */}
-      <AuthForm handleSubmit={handleSubmit} />
+      <AuthForm handleSubmit={handleSubmit} passwordAutoComplete="new-password" />
       {error && <div className="error">{error}</div>}{" "}
       {/* Display error if exists */}
     </main>

@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 
-export default function AuthForm({ handleSubmit }) {
+export default function AuthForm({
+  handleSubmit,
+  passwordAutoComplete = "current-password",
+}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,6 +15,7 @@ export default function AuthForm({ handleSubmit }) {
         <span>Email:</span>
         <input
           type="email"
+          autoComplete="email"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
           required
@@ -21,6 +25,7 @@ export default function AuthForm({ handleSubmit }) {
         <span>Password:</span>
         <input
           type="password"
+          autoComplete={passwordAutoComplete}
           onChange={(e) => setPassword(e.target.value)}
           value={password}
           required
