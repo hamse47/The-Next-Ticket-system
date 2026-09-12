@@ -10,7 +10,7 @@ export async function generateMetadata({ params }) {
   const ticket = await res.json();
 
   return {
-    title: `New | ${ticket.title}`, // Generating title based on ticket data
+    title: `Next Ticket Master | ${ticket.title}`, // Generating title based on ticket data
   };
 }
 

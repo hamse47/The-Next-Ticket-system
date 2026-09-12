@@ -4,7 +4,7 @@ import Loading from "../loading";
 import TicketList from "./TicketList";
 
 export const metadata = {
-  title: "New Helpdesk | Tickets ",
+  title: "Next Ticket Master | Tickets",
 };
 
 export default function Tickets() {
