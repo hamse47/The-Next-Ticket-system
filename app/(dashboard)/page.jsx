@@ -14,8 +14,11 @@ export default function Home() {
       </p>
 
       <div className="flex justify-center my-8">
-        <Link href="/tickets">
-          <button className="btn-primary text-xl">View Tickets</button>
+        <Link
+          href="/tickets"
+          className="btn-primary text-xl px-3 py-2 rounded-sm hover:bg-opacity-90"
+        >
+          View Tickets
         </Link>
       </div>
 
