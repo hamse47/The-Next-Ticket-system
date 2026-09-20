@@ -39,6 +39,10 @@ export default function Login() {
       setError(error.message);
     }
     if (!error) {
+      // Refresh so server components pick up the new session cookie before
+      // navigating, otherwise the dashboard layout still sees a signed-out
+      // session and redirects straight back to /login
+      router.refresh();
       router.push("/"); // Navigating to the home page
     }
   };
